@@ -1,3 +1,9 @@
+<?php
+  require 'connection.php'
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +25,54 @@
                          </div>
 
                          <div class="card-body">
-                              
+
+                         <table class="table table-bordered table-striped">
+                              <thead>
+                                   <tr>
+                                        <th>ID</th>
+                                        <th>Student Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Course</th>
+                                        <th>action</th>
+
+                                   </tr>
+                              </thead>
+
+                              <tbody>
+                                   <?php 
+                                   $query = "SELECT * FROM students";
+                                   $query_run = mysqli_query($conn, $query);
+
+                                   if ( mysqli_num_rows($query_run) > 0) {
+                                         foreach($query_run as $student) {
+                                            
+                                               
+                                             ?>
+                                              <tr>
+                                                    <td><?= $student['id'];?></td>
+                                                    <td><?= $student['name'];?></td>
+                                                    <td><?= $student['email'];?></td>
+                                                    <td><?= $student['phone'];?></td>
+                                                    <td><?= $student['course'];?></td>
+
+                                                    <td>
+                                                    <a href="" class="btn btn-info btn-sm">Edit</a>
+                                                       <a href="" class="btn btn-success btn-sm">Edit</a>
+                                                       <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                                    </td>
+                                              </tr>
+                                           <?php
+
+                                         }
+                                   } else {
+                                        echo "<h5> No Record Found </h5>";
+                                   }
+                                   ?>
+                                  
+                              </tbody>
+                         </table>
+
                          </div>
                     </div>
 
