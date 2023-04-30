@@ -2,6 +2,23 @@
   session_start();
 require 'connection.php';
 
+if(isset($_POST['delete-student'])) {
+     $student_id =  mysqli_real_escape_string($conn, $_POST['delete-student']);
+     $query = "DELETE FROM students WHERE id='$student_id'";
+
+     $query_run = mysqli_query($conn,$query);
+
+     if($query_run) {
+          $_SESSION['message'] = "Student delete Successfully";
+          header('Location: index.php');
+          exit(0);
+     } else {
+          $_SESSION['message'] = "Student Not delete";
+          header("Location: index.php");
+          exit(0);
+     }
+}
+
 if(isset($_POST['update_student'])){
 
      $student_id = mysqli_real_escape_string($conn, $_POST['student_id']);
