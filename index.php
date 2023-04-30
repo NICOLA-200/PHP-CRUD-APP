@@ -61,7 +61,7 @@
                                                     <td><?= $student['course'];?></td>
 
                                                     <td>
-                                                    <a href="" class="btn btn-info btn-sm">view</a>
+                                                    <a href="student-view.php?id=<?=$student['id'];?>" class="btn btn-info btn-sm">view</a>
                                                        <a href="student-edit.php?id=<?=$student['id'];?>" class="btn btn-success btn-sm">Edit</a>
                                                        <a href="" class="btn btn-danger btn-sm">Delete</a>
                                                     </td>

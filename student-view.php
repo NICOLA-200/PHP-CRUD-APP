@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+
 require "connection.php";
 ?>
 
@@ -16,16 +16,14 @@ require "connection.php";
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>student edit</title>
+    <title>student view</title>
   </head>
   <body>
     
 
      <div class="container mt-5">
 
-      <?php 
-         include('message.php')
-      ?>
+    
 
 </div>
 
@@ -33,7 +31,7 @@ require "connection.php";
                <div class="col-md-12">
                     <div class="card">
                          <div class="card-header">
-                              <h4>Student Edit
+                              <h4>Student view
                                    <a href="index.php" class="btn btn-danger float-end">BACK</a>
                               </h4>
                          </div>
@@ -59,32 +57,32 @@ require "connection.php";
                                    
                               <form action="code.php" method="POST">
 
-                                   <input type="hidden" name="student_id" value="<?= $student['id'];  ?>">
-
+                                   
+                                       
                                    <div class="mb-3">
                                         <label for="">Student Name</label>
-                                        <input type="text" name="name" value="<?= $student['name'];?>" class="form-control">
+                                        <p class="form-control"><?= $student['name'];?> </p>
                                    </div>
 
                                    <div class="mb-3">
                                         <label for="">Email</label>
-                                        <input type="email" name="email" value="<?= $student['email'];?>" class="form-control">
+                                        
+                                        <p class="form-control"><?= $student['email'];?></p>
                                    </div>
 
                                    <div class="mb-3">
                                         <label for="">Phone</label>
-                                        <input type="text" name="phone" value="<?= $student['phone'];?>" class="form-control">
+                                        
+                                        <p class="form-control"><?= $student['phone'];?></p>
                                    </div>
 
                                    <div class="mb-3">
                                         <label for="">Student course</label>
-                                        <input type="text" name="course" value="<?= $student['course'];?>" class="form-control">
+                                        
+                                        <p class="form-control"><?= $student['course'];?></p>
                                    </div>
 
-                                   <div class="mb-3">
-                                        
-                                        <button type="submit" name="update_student" class="btn btn-primary ">update Student</button>
-                                   </div>
+                                  
                               </form>
 
                                    <?php
