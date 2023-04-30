@@ -1,5 +1,6 @@
 <?php
-  require 'connection.php'
+  session_start();
+  require 'connection.php';
 ?>
 
 
@@ -14,7 +15,10 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
-       <div class="container">
+       <div class="container mt-4">
+
+         <?php include('message.php'); ?>
+
           <div class="row">
                <div class="col-sm-12">
                     <div class="card">
@@ -57,8 +61,8 @@
                                                     <td><?= $student['course'];?></td>
 
                                                     <td>
-                                                    <a href="" class="btn btn-info btn-sm">Edit</a>
-                                                       <a href="" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="" class="btn btn-info btn-sm">view</a>
+                                                       <a href="student-edit.php?id=<?=$student['id'];?>" class="btn btn-success btn-sm">Edit</a>
                                                        <a href="" class="btn btn-danger btn-sm">Delete</a>
                                                     </td>
                                               </tr>
