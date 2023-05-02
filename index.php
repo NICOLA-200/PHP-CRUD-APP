@@ -13,7 +13,7 @@ session_start();
          <?php include('message.php'); ?>
   
 
-         <a href="generate_pdf.php">PDF</a>
+       <div class=" border border-muted "><span>List of the record in PDF format</span> <a href="generate_pdf.php">PDF</a></div> 
  
           <div class="row">
                <div class="col-sm-12">
