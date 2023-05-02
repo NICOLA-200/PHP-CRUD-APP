@@ -1,5 +1,5 @@
 <?php
-  session_start();
+session_start();
   require 'connection.php';
 ?>
 
@@ -8,9 +8,13 @@
 ?>
 
        <div class="container mt-4">
+          
 
          <?php include('message.php'); ?>
+  
 
+         <a href="generate_pdf.php">PDF</a>
+ 
           <div class="row">
                <div class="col-sm-12">
                     <div class="card">

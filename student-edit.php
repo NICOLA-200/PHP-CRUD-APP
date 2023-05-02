@@ -12,7 +12,7 @@ require "connection.php";
      <div class="container mt-5">
 
       <?php 
-         include('message.php')
+         include('message.php');
       ?>
 
 </div>
